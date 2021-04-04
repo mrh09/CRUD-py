@@ -23,11 +23,11 @@
                                     <td>{{ employee.division }}</td>
                                     <td>
                                         <a href="{% url 'edit_employee' employee.id %}" class="btn btn-primary">Edit</a>
-                                        <button data-toggle="modal" data-target="#delete_employee-{{ employee.id }}" class="btn btn-danger">Delete</button>
+                                        <a href="{% url 'delete_employee' employee.id %}" class="btn btn-danger">Delete</a>
                                     </td>
 
-                                    <div class="modal" id="delete_employee-{{ employee.id }}">
-                                        <div class="modal-dialog">
+                                    <div class="modal fade" id="delete-{{ employee.id }}" tabindex="-1" role="dialog" aria-label="delete-{{ employee.id }}">
+                                        <div class="modal-dialog" role="document">
                                             <div class="modal content">
                                                 <div class="modal-header">
                                                     <div class="modal-title">

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'karyawan',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -124,4 +125,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/'),    
 ]
 
-LOGIN_REDIRECT_URL = 'employee'
+LOGIN_REDIRECT_URL = '/employee'
