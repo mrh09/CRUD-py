@@ -2,14 +2,18 @@ from django.shortcuts import render, redirect
 from karyawan.models import Employee
 from karyawan.forms import FormEmployee
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.conf import settings
 
 
+@login_required(login_url=settings.LOGIN_URL)
 def delete_employee(request, id_employee):
     employee = Employee.objects.filter(id=id_employee)
     employee.delete()
 
     return redirect('employee')
 
+@login_required(login_url=settings.LOGIN_URL)
 def edit_employee(request, id_employee):
     employee = Employee.objects.get(id=id_employee)
     template = 'edit-employee.html'
@@ -29,6 +33,7 @@ def edit_employee(request, id_employee):
     return render(request, template, konteks)
 
 
+@login_required(login_url=settings.LOGIN_URL)
 def employee(request):
     employees = Employee.objects.all()
 
@@ -38,6 +43,7 @@ def employee(request):
 
     return render(request, 'employee.html', konteks)
 
+@login_required(login_url=settings.LOGIN_URL)
 def add_employee(request):
     if request.POST:
         form = FormEmployee(request.POST)

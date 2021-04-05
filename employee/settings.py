@@ -126,3 +126,5 @@ STATICFILES_DIRS = [
 ]
 
 LOGIN_REDIRECT_URL = '/employee'
+
+LOGIN_URL = '/login'

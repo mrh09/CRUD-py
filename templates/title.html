@@ -1,3 +1,6 @@
 <center>
     <h1>Employee</h1>
+    {% if user.is_authenticated %}
+        <p>{{ user }} / <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a> </p>
+    {% endif %}
 </center>
