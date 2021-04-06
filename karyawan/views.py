@@ -5,7 +5,13 @@ from karyawan.forms import FormEmployee
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
+from django.template import loader
+from django.http import HttpResponse
 
+def gettemplate(request):
+    template = loader.get_template('registration/login.html')
+
+    return HttpResponse(template.render)
 
 class LandingView(TemplateView):
     template_name = 'registration/login.html'
