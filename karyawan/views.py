@@ -1,10 +1,14 @@
 from django.shortcuts import render, redirect
+from django.views.generic.base import TemplateView
 from karyawan.models import Employee
 from karyawan.forms import FormEmployee
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 
+
+class LandingView(TemplateView):
+    template_name = 'Registration/login.html'
 
 @login_required(login_url=settings.LOGIN_URL)
 def delete_employee(request, id_employee):
