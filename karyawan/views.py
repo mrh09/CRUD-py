@@ -8,7 +8,7 @@ from django.conf import settings
 
 
 class LandingView(TemplateView):
-    template_name = 'Registration/login.html'
+    template_name = 'registration/login.html'
 
 @login_required(login_url=settings.LOGIN_URL)
 def delete_employee(request, id_employee):
