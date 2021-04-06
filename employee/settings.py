@@ -57,7 +57,7 @@ ROOT_URLCONF = 'employee.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'karyawan/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'karyawan/templates/registration/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
