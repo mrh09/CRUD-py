@@ -11,6 +11,7 @@ routers = routers.DefaultRouter()
 routers.register('employee', EmployeeViewSet)
 
 urlpatterns = [
+    path('', LoginView.as_view())
     path('admin/', admin.site.urls),
     path('employee/', employee, name='employee'),
     path('add-employee/', add_employee, name='add_employee'),
